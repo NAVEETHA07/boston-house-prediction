@@ -1,0 +1,86 @@
+Boston Housing Prediction using Linear Regression
+This project uses linear regression to predict housing prices based on various features, such as crime rate, average number of rooms, property tax rate, etc., using the Boston housing dataset. The model is trained, evaluated, and visualized using Python and machine learning libraries.
+
+Note: The Boston housing dataset has been deprecated in newer versions of scikit-learn due to ethical concerns. An alternative dataset, like California Housing, can be used for the same process.
+
+Features
+Linear Regression model to predict housing prices based on multiple features.
+Evaluation using Mean Squared Error (MSE) and R-squared (R²) score.
+Visualization of Actual vs Predicted prices and Residuals.
+Prerequisites
+Ensure you have the following Python libraries installed:
+
+numpy
+matplotlib
+scikit-learn
+You can install them using pip:
+
+bash
+Copy
+pip install numpy matplotlib scikit-learn
+Code Walkthrough
+1. Data Loading:
+The dataset is loaded using sklearn.datasets.load_boston(). However, this dataset is deprecated in newer versions of scikit-learn. You can use the California Housing dataset as an alternative:
+
+python
+Copy
+from sklearn.datasets import fetch_openml
+
+california = fetch_openml(name="california_housing", version=1)
+2. Data Preprocessing:
+The dataset is split into training and testing sets using train_test_split().
+X contains the features, and y contains the target (housing prices).
+3. Model Training:
+A linear regression model is initialized using LinearRegression().
+The model is trained using .fit() on the training data.
+4. Model Evaluation:
+The model makes predictions on the test data using .predict().
+Performance is evaluated using Mean Squared Error (MSE) and R-squared (R²) score.
+5. Visualization:
+Actual vs Predicted Plot: Compares the actual housing prices with the predicted values.
+Residual Plot: Visualizes the residuals to check if there is any pattern in the errors.
+How to Use
+Run the Script: After setting up the environment with the required libraries, you can run the script. The script will:
+
+Load the dataset.
+Train a linear regression model.
+Evaluate the model's performance.
+Show plots for the actual vs predicted prices and the residuals.
+Run the following command in the terminal:
+
+bash
+Copy
+python housing_prediction.py
+Visualization: The script will display two plots:
+
+Actual vs Predicted Plot: Scatter plot showing how close the predictions are to the actual values.
+Residual Plot: Plot showing the difference (residuals) between the predicted and actual values to check for patterns in the errors.
+Output
+The Mean Squared Error (MSE) and R-squared (R²) score will be printed in the terminal, showing the model’s performance.
+Two plots will be displayed:
+Actual vs Predicted Prices plot.
+Residual Plot.
+Troubleshooting
+Deprecation Warning: If you're using newer versions of scikit-learn, the load_boston() function will raise a deprecation warning. You can use the California Housing dataset instead by replacing the data loading section with:
+
+python
+Copy
+from sklearn.datasets import fetch_openml
+
+california = fetch_openml(name="california_housing", version=1)
+
+X = california.data
+y = california.target
+Plot Not Showing: Ensure you're using a supported environment like Jupyter Notebooks, or if running in a script, ensure that matplotlib is correctly configured to display the plots.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+scikit-learn for providing the dataset and machine learning algorithms.
+matplotlib for visualization tools.
+NumPy for data manipulation.
+
+
+
+
